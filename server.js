@@ -19,7 +19,7 @@ mongoose.Promise = global.Promise;
 const local_db = "mongodb://localhost/nytreact"
 
 mongoose.connect(
-  process.env.MONGODB_URI || local_db,
+  process.env.MONGODB_URI || 'mongodb://heroku_mj9s5nqn:dbu4pc8tn9de4hc4mfvqgjquid@ds111565.mlab.com:11565/heroku_mj9s5nqn',
   {
     useMongoClient: true
   }
