@@ -2,6 +2,18 @@
   "name": "react-news-scraper",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon\" \"npm run client\"",
+    "build": "cd client && npm run build",    
+    "deploy": "npm run build && git add . && git commit -m \"Building for production\" && git push heroku master",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
@@ -9,11 +21,5 @@
     "mongoose": "^4.11.14",
     "morgan": "^1.9.0",
     "react-router-dom": "^4.2.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   }
 }
